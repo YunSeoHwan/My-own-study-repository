@@ -21,3 +21,11 @@ print(num + 2) # 4
 num +=2 # num = num + 2
 print(num) # 6
 ```
+```python
+print(abs(-5)) # 5 절댓값
+print(pow(4,2)) # 16 제곱근
+print(max(5,10)) # 10 최댓값
+print(min(5,10)) # 5 최솟값
+print(round(3.14)) # 3 반올림
+print(round(4.9)) # 5 
+```
