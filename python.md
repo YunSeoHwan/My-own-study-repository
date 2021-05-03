@@ -45,3 +45,22 @@ print("생년월일 : " + number[:6]) # 처음부터 6 직전까지
 print("뒤 7자리 : " + number[7:]) # 7 부터 끝까지
 print("뒤 7자리(뒤부터) : " + number[-7:]) # 맨 뒤에서부터 7번째 끝까지
 ```
+   ### 3-2 문자열 처리함수   
+   ```python
+   python = "Python is Beautiful"
+
+print(python.lower()) # 소문자로 출력 -> python is beautiful
+print(python.upper()) # 대문자로 출력 -> PYTHON IS BEAUTIFUL
+print(python[0].isupper()) # 첫 문자열이 대문자인지 -> True
+
+print(len(python)) # 문자열 길이 -> 19
+print(python.replace("Python", "Java")) # 문자열 교체 -> Java is Beautiful
+
+index = python.index("t") # t이 몇번째에 있는지 -> 2
+print(index)
+
+index = python.index("t",index + 1) # 그 다음 t는 언제 나오는지 -> 14
+print(index)
+
+print(python.find("t")) # index와 값을 찾아주지만 값이 없을 시, -1 return
+```
