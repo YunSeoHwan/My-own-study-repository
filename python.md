@@ -29,3 +29,17 @@ print(min(5,10)) # 5 최솟값
 print(round(3.14)) # 3 반올림
 print(round(4.9)) # 5 
 ```
+3. 슬라이싱   
+다음을 보고 이해하자.
+```python
+number = "001023-1234567"
+
+print("성별 : " + number[7])
+print("연 : " + number[0:2]) # 0 부터 2 직전까지
+print("월 : " + number[2:4])
+print("일 : " + number[4:6])
+
+print("생년월일 : " + number[:6]) # 처음부터 6 직전까지 
+print("뒤 7자리 : " + number[7:]) # 7 부터 끝까지
+print("뒤 7자리(뒤부터) : " + number[-7:]) # 맨 뒤에서부터 7번째 끝까지
+```
