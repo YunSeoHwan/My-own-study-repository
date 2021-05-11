@@ -64,3 +64,7 @@ print(index)
 
 print(python.find("t")) # index와 값을 찾아주지만 값이 없을 시, -1 return
 ```
+## 4. 자료구조   
+다양한 자료구조들이 있지만, 가장 많이 사용되는 리스트(list), 딕셔너리(dictionary), 튜플(tuple)에 대해 다룸.   
+
+   ### 4-1 리스트(list)
