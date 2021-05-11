@@ -68,3 +68,23 @@ print(python.find("t")) # index와 값을 찾아주지만 값이 없을 시, -1 
 다양한 자료구조들이 있지만, 가장 많이 사용되는 리스트(list), 딕셔너리(dictionary), 튜플(tuple)에 대해 다룸.   
 
    ### 4-1 리스트(list)
+   ```python
+   jobs = ["개발자", "교사", "경찰"] # 리스트 정의
+print(jobs) # ['개발자', '교사', '경찰']
+
+print(jobs.index("교사")) # object를 넣으면 위치를 알려줌. -> 1
+
+jobs.append("의사") # list에 값을 추가함.
+print(jobs) # ['개발자', '교사', '경찰','의사']  
+
+jobs.insert(1,"야구선수") # 해당 위치에 object를 할당.
+print(jobs) # ['개발자', '야구선수' ,'교사', '경찰','의사']  
+
+num_list = [2,4,3,7,5]
+
+num_list.sort() # list 순서 정렬
+print(num_list) # [2, 3, 4, 5, 7]
+
+num_list.reverse() # list 역순 정렬
+print(num_list) #[7, 5, 4, 3, 2]
+```
