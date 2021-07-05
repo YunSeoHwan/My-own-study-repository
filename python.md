@@ -88,3 +88,4 @@ print(num_list) # [2, 3, 4, 5, 7]
 num_list.reverse() # list 역순 정렬
 print(num_list) #[7, 5, 4, 3, 2]
 ```
+# 머신러닝   
