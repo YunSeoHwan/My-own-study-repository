@@ -120,4 +120,16 @@ print(dic.values()) # value 값만 출력
 print(dic.items())  # 키, value 값 모두 출력
 print(dic.clear())  # 딕셔너리 제거
 ```
+
+   ### 4-3 튜플(tuple)
+   값을 변경할 수 없음.
+   ```python
+   menu = ("김밥", "라면")   # 튜플 지정 방식
+print(menu[0])
+print(menu[1])
+
+menu.add("떡볶이")    # Error 값 추가 안됨.
+
+(name, age, hobby) = ("서환", 21, "코딩")   # 한 번에 튜플 지정
+```
 # 머신러닝   
