@@ -132,4 +132,31 @@ menu.add("떡볶이")    # Error 값 추가 안됨.
 
 (name, age, hobby) = ("서환", 21, "코딩")   # 한 번에 튜플 지정
 ```
+
+   ### 4-4 세트(set)
+   중복된 값을 제거.
+   ```python
+   num_set = {1,2,3,3,3}   # set 지정
+
+print(num_set)  # {1, 2, 3}
+
+java = {"유재석" ,"조세호", "박명수"}   
+python = set(["유재석" ,"윤서환"])    # set의 또 다른 지정법
+
+# 교집합
+print(java & python)    # {'유재석'}
+print(java.intersection(python))
+
+# 합집합
+print(java | python)    # {'유재석', '조세호', '박명수', '윤서환'}
+print(java.union(python))
+
+# 차집합
+print(java - python)    # {'조세호', '박명수'}
+print(java.difference(python))
+
+# 값 추가, 제거
+java.add("김종국")    # 값 추가
+python.remove("유재석")   # 값 제거
+```
 # 머신러닝   
