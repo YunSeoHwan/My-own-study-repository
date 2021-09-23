@@ -88,4 +88,36 @@ print(num_list) # [2, 3, 4, 5, 7]
 num_list.reverse() # list 역순 정렬
 print(num_list) #[7, 5, 4, 3, 2]
 ```
+
+   ### 4-2 딕셔너리(dictionary)
+   하나의 키 값에 하나의 value 값이 존재함.
+   ```python
+   dic = {1:"apple", 100:"banana"}
+
+print(dic[1])   # 해당 키에 맞는 value값이 출력됨.
+print(dic[100])
+
+print(dic.get(1))   # 해당 키에 value값을 찾아줌.
+#print(dic[2])     # 해당 키 값이 없으면 Error
+print(dic.get(2))   # get 사용시 값이 없어도 Error 안뜨고 none 출력
+print(dic.get(2, "사용 가능")) # none 대신 다른 문구 사용시
+
+print(1 in dic)  # True
+print(2 in dic)  # False
+
+dic = {"A-1":"apple", "B-1":"banana"}
+
+dic["A-1"] = "lemon"  # 기존 value값을 바꿈.
+dic["C-1"] = "peach"  # value 추가
+
+print(dic)    # {'A-1': 'lemon', 'B-1': 'banana', 'C-1': 'peach'}
+
+del dic["A-1"]  # 지정한 키에 해당하는 value값 제거
+
+print(dic.keys())   # 키 값만 출력
+print(dic.values()) # value 값만 출력
+
+print(dic.items())  # 키, value 값 모두 출력
+print(dic.clear())  # 딕셔너리 제거
+```
 # 머신러닝   
