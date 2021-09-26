@@ -183,5 +183,5 @@ def profile2(name, age, *lan):    # 가변인자 사용
 
 profile2("윤서환", 22, "python", "java", "c")
 profile2("유재석", 26, "python", "java", "c", "c++")
-'''
+```
 # 머신러닝   
