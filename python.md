@@ -164,7 +164,7 @@ python.remove("유재석")   # 값 제거
    생략.
    ## 6. 함수
    어떤 일을 수행하는 코드의 묶음.
-   ### 6.1 가변인자 사용
+   ### 6-1 가변인자 사용
    ``` python
    def profile1(name, age, lan1, lan2, lan3):
   print("이름 : {0}\t나이 : {1}\t".format(name, age), end=" ") # 엔터가 아닌 공백으로 끝냄
@@ -183,5 +183,20 @@ def profile2(name, age, *lan):    # 가변인자 사용
 
 profile2("윤서환", 22, "python", "java", "c")
 profile2("유재석", 26, "python", "java", "c", "c++")
+```
+   ### 6-2 지역변수, 전역변수
+   ```python
+   gun = 10  # 전역 변수
+
+def check(sol):
+  gun = 20  # 지역 변수
+  gun = gun - sol
+  print("[함수 내] 남은 총 : {0}".format(gun))
+
+print("전체 총 : {0}".format(gun))  # 10
+check(2)  # 18
+print("전체 총 : {0}".format(gun))  # 10
+
+# 변수에 global을 붙여 전역변수로 사용 가능
 ```
 # 머신러닝   
