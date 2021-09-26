@@ -159,4 +159,29 @@ print(java.difference(python))
 java.add("김종국")    # 값 추가
 python.remove("유재석")   # 값 제거
 ```
+
+   ### 5. 조건문, 반복문
+   생략.
+   ### 6. 함수
+   어떤 일을 수행하는 코드의 
+   ### 6.1 가변인자 사용
+   ``` python
+   def profile1(name, age, lan1, lan2, lan3):
+  print("이름 : {0}\t나이 : {1}\t".format(name, age), end=" ") # 엔터가 아닌 공백으로 끝냄
+  print(lan1, lan2, lan3)   # 뒤에 출력
+
+profile1("윤서환", 22, "python", "java", "c")   # 함수 호출
+# 문제점 : 변수에 해당하는 value가 많거나 혹은 적을 경우 수정 불가피
+
+
+# 해결책
+def profile2(name, age, *lan):    # 가변인자 사용
+  print("이름 : {0}\t나이 : {1}\t".format(name, age), end=" ") # 엔터가 아닌 공백으로 끝냄
+  for l in lan:   # 반복문으로 출력
+    print(l, end=" ")   # 공백으로 구분
+  print()
+
+profile2("윤서환", 22, "python", "java", "c")
+profile2("유재석", 26, "python", "java", "c", "c++")
+'''
 # 머신러닝   
