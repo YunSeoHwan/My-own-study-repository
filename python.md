@@ -199,4 +199,30 @@ print("전체 총 : {0}".format(gun))  # 10
 
 # 변수에 global을 붙여 전역변수로 사용 가능
 ```
+
+   ## 7. 입출력
+   ### 7-1 표준입출력
+   ```python
+   import sys
+print("Python", "Java", file=sys.stdout)  # 정상처리
+print("Python", "Java", file=sys.stderr)  # 에러처리
+
+
+score = {"수학":100, "영어":80, "과학":20}
+for subject, scores in score.items():   # 키 값과 value값을 받음.
+  print(subject, scores, sep=" : ")   # sep은 해당 키워드로 분류
+# 수학 : 100
+# 영어 : 80
+# 과학 : 20
+  print(subject.ljust(8), str(scores).rjust(4), sep=":")  # 과목은 8칸기준 왼쪽 정렬 
+# 수학      : 100
+# 영어      :  80
+# 과학      :  20
+
+for num in range(1, 21):
+  print("대기번호 : " + str(num).zfill(3))    # 0으로 채움
+# 대기번호 : 001
+# 대기번호 : 002
+# ...
+```
 # 머신러닝   
