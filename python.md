@@ -246,3 +246,44 @@ print("{0:+,}".format(100000000)) # 100,000,000
 print("{0:f}".format(5/3))  # 1.66667
 print("{0:2f}".format(5/3)) # 3째 자리에서 반올림 --> 1.7
 ```
+
+   ### 7-3 파일 입출력
+   ```python
+   score_file = open("score.txt", "w", encoding="utf8")  # score.txt 파일을 쓰기(w)
+print("수학 : 100", file=score_file)    # score.txt 파일이 생성되고 해당 내용 입력
+print("영어 : 80", file=score_file)
+score_file.close()    # 항상 close로 마무리
+
+score_file = open("score.txt", "a", encoding="utf8")  # 해당 파일에 덮어쓰기(a)
+score_file.write("과학 : 80")   # a는 띄어쓰기 별도로 입력
+score_file.write("\n코딩 : 100")
+score_file.close()    # score.txt파일에 덮어짐
+
+score_file = open("score.txt", "r", encoding="utf8") # 해당 파일 읽기(r)
+print(score_file.read())
+score_file.close()
+# 수학 : 100
+# 영어 : 80
+# 과학 : 80
+# 코딩 : 100
+
+score_file = open("score.txt", "r", encoding="utf8")
+print(score_file.readline(), end="")  # 한 줄씩 읽기, 읽고 난 후 커서는 다음 줄 이동
+print(score_file.readline(), end="")  
+print(score_file.readline(), end="")
+print(score_file.readline(), end="")
+score_file.close()
+# 수학 : 100
+# 영어 : 80
+# 과학 : 80
+# 코딩 : 100
+
+# 파일 전체 읽기
+score_file = open("score.txt", "r", encoding="utf8")
+while True:
+  line = score_file.readline()
+  if not line:
+    break
+  print(line, end="")
+score_file.close()
+```
