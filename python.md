@@ -314,3 +314,26 @@ with open("test.txt", "w", encoding="utf8") as test_file:
 with open("test.txt", "r", encoding="utf8") as test_file:
   print(test_file.read())   # 테스트 파일입니다.
   ```
+   ## 8. 클래스(class)
+   쉽게 생각해서 하나의 템플릿이라고 이해하자. ex) 붕어빵 틀
+   
+   ```python
+   class Unit:
+  def __init__(self, name, hp, damage):   # init으로 정의
+    self.name = name
+    self.hp = hp
+    self.damage = damage
+    print("{0} 유닛이 생성 되었습니다.".format(self.name))
+    print("체력 {0}, 공격력 {1}".format(self.hp, self.damage))
+
+marine1 = Unit("마린", 40, 5)
+marine2 = Unit("마린", 40, 5)
+tank = Unit("탱크", 150, 35)
+
+# 마린 유닛이 생성 되었습니다.
+# 체력 40, 공격력 5
+# 마린 유닛이 생성 되었습니다.
+# 체력 40, 공격력 5
+# 탱크 유닛이 생성 되었습니다.
+# 체력 150, 공격력 35
+```
