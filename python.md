@@ -301,3 +301,16 @@ profile = pickle.load(profile_file) # file에 있는 정보를 profile에 불러
 print(profile)
 profile_file.close()
 ```
+
+```python
+import pickle
+with open("profile.pickle", "rb") as profile_file:  # profile_file 이라는 변수에 저장
+  print(pickle.load(profile_file))    # with문 탈출하면서 close 자동 시행
+
+# pickle 없이 파일 읽고 쓰기
+with open("test.txt", "w", encoding="utf8") as test_file:
+  test_file.write("테스트 파일입니다.")
+
+with open("test.txt", "r", encoding="utf8") as test_file:
+  print(test_file.read())   # 테스트 파일입니다.
+  ```
