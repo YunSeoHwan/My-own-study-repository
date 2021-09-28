@@ -287,3 +287,17 @@ while True:
   print(line, end="")
 score_file.close()
 ```
+   ### 7-4 pickle, with
+   ```python
+   import pickle
+profile_file = open("profile.pickle", "wb")  # pickle 정의. b는 바이너리 약자, 인코딩 안해도 됨.
+profile = {"이름":"윤서환", "나이":22}
+pickle.dump(profile, profile_file)  # profile에 있는 정보를 file에 저장
+print(profile)
+profile_file.close()
+
+profile_file = open("profile.pickle", "rb")
+profile = pickle.load(profile_file) # file에 있는 정보를 profile에 불러오기
+print(profile)
+profile_file.close()
+```
