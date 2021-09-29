@@ -1,13 +1,3 @@
-python web scrapping
-====================
-### 스크래퍼
-1. BeautifulSoup   
-HTML 및 XML 파일에서 데이터를 가져 오기위한 Python 라이브러리다.
-실제 작업을 위해서는 Requests와 함께 사용된다.
-2. Requests   
-Requests 는 Apache License 2.0에 따라 릴리스 된 Python HTTP 라이브러리다. 
-이 프로젝트의 목표는 HTTP 요청을보다 간단하고 인간 친화적으로 만드는 것이다. - 나무위키
-
 # 이론 및 문법
 ## 1. 자료형   
 숫자, 문자열, bool 자료형 모두가 가능함. 변수를 통해 처리가 가능하다.   
@@ -406,3 +396,20 @@ firebat1.damaged(25)
 # 파이어뱃 : 현재 체력은 0 입니다.
 # 파이어뱃 : 파괴되었습니다.
 ```
+   ### 8-3 상속
+   클래스에서 클래스의 내용(속성과 메소드)를 물려받는 것.
+   ```python
+   # 일반 유닛
+class Unit:
+  def __init__(self, name, hp):   # init으로 정의
+    self.name = name
+    self.hp = hp
+
+# 공격 유닛
+class AttackUnit(Unit): # Unit 상속
+  def __init__(self, name, hp, damage):
+    Unit.__init__(self, name, hp) # Unit으로 상속받은 name, hp
+    self.name = name
+    self.hp = hp
+    self.damage = damage
+    ```
