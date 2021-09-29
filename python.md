@@ -412,8 +412,8 @@ class AttackUnit(Unit): # Unit 상속
     self.name = name
     self.hp = hp
     self.damage = damage
-    ```
-    ```python
+```
+```python
     # 일반 유닛
 class Unit:
   def __init__(self, name, hp): 
