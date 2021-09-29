@@ -433,3 +433,55 @@ valkyrie.fly(valkyrie.name, "3시")
 
 # 발키리 : 3시 시 방향으로 날아갑니다. [속도 5]
 ```
+   ### 8-4 메소드 오버라이딩
+   자식 클래스가 부모 클래스의 메소드를 특정 형태로 변형해서 구현하는 것
+   ```python
+   # 일반 유닛
+class Unit:
+  def __init__(self, name, hp): 
+    self.name = name
+    self.hp = hp
+  
+  def move(self, location):
+    print("지상 유닛 이동")
+    print("{0} : {1} 시 방향으로 이동합니다. [속도 {2}]"\
+    .format(self.name, location, self.speed))
+
+# 공격 유닛
+class AttackUnit(Unit): # Unit 상속
+  def __init__(self, name, hp, damage):
+    Unit.__init__(self, name, hp) # Unit으로 상속받은 name, hp
+    self.name = name
+    self.hp = hp
+    self.damage = damage
+
+# 날 수 있는 기능 가진 클래스
+class Flyable:
+  def __init__(self, fly_speed):
+    self.fly_speed = fly_speed
+  
+  def fly(self, name, location):
+    print("{0} : {1} 시 방향으로 날아갑니다. [속도 {2}]"\
+    .format(name, location, self.fly_speed))
+
+# 공중 공격 유닛 클래스
+class FlyableAttackUnit(AttackUnit, Flyable):   # 다중 상속
+  def __init__(self, name, hp, damage, fly_speed):  # 정의
+    AttackUnit.__init__(self, name, hp, damage)
+    Flyable.__init__(self, fly_speed)
+  
+  def move(self, location):
+    print("[공중 유닛 이동]")
+    self.fly(self.name, location)   # 메소드 오버라이딩
+
+vulture = AttackUnit("벌쳐", 80, 10, 20)
+battlecruiser = FlyableAttackUnit("배틀크루저", 500, 25, 3)
+
+vulture.move("11시")
+battlecruiser.move("3시")
+
+# 지상 유닛 이동
+# 벌쳐 : 11시 시 방향으로 이동합니다. [속도 10]
+# [공중 유닛 이동]
+# 배틀크루저 : 3시 시 방향으로 날아갑니다. [속도 3]
+```
