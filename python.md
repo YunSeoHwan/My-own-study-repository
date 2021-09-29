@@ -398,21 +398,6 @@ firebat1.damaged(25)
 ```
    ### 8-3 상속과 다중상속
    클래스에서 클래스의 내용(속성과 메소드)를 물려받는 것.
-   ```python
-   # 일반 유닛
-class Unit:
-  def __init__(self, name, hp):   # init으로 정의
-    self.name = name
-    self.hp = hp
-
-# 공격 유닛
-class AttackUnit(Unit): # Unit 상속
-  def __init__(self, name, hp, damage):
-    Unit.__init__(self, name, hp) # Unit으로 상속받은 name, hp
-    self.name = name
-    self.hp = hp
-    self.damage = damage
-```
 ```python
     # 일반 유닛
 class Unit:
