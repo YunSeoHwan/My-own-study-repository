@@ -396,7 +396,7 @@ firebat1.damaged(25)
 # 파이어뱃 : 현재 체력은 0 입니다.
 # 파이어뱃 : 파괴되었습니다.
 ```
-   ### 8-3 상속
+   ### 8-3 상속과 다중상속
    클래스에서 클래스의 내용(속성과 메소드)를 물려받는 것.
    ```python
    # 일반 유닛
@@ -413,3 +413,38 @@ class AttackUnit(Unit): # Unit 상속
     self.hp = hp
     self.damage = damage
     ```
+    ```python
+    # 일반 유닛
+class Unit:
+  def __init__(self, name, hp): 
+    self.name = name
+    self.hp = hp
+
+# 공격 유닛
+class AttackUnit(Unit): # Unit 상속
+  def __init__(self, name, hp, damage):
+    Unit.__init__(self, name, hp) # Unit으로 상속받은 name, hp
+    self.name = name
+    self.hp = hp
+    self.damage = damage
+
+# 날 수 있는 기능 가진 클래스
+class Flyable:
+  def __init__(self, fly_speed):
+    self.fly_speed = fly_speed
+  
+  def fly(self, name, location):
+    print("{0} : {1} 시 방향으로 날아갑니다. [속도 {2}]"\
+    .format(name, location, self.fly_speed))
+
+# 공중 공격 유닛 클래스
+class FlyableAttackUnit(AttackUnit, Flyable):   # 다중 상속
+  def __init__(self, name, hp, damage, fly_speed):  # 정의
+    AttackUnit.__init__(self, name, hp, damage)
+    Flyable.__init__(self, fly_speed)
+
+valkyrie = FlyableAttackUnit("발키리", 200, 6, 5)
+valkyrie.fly(valkyrie.name, "3시")
+
+# 발키리 : 3시 시 방향으로 날아갑니다. [속도 5]
+```
