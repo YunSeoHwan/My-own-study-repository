@@ -485,3 +485,24 @@ battlecruiser.move("3시")
 # [공중 유닛 이동]
 # 배틀크루저 : 3시 시 방향으로 날아갑니다. [속도 3]
 ```
+   ### 8-5 super
+   자식 클래스에서 부모 클래스를 사용하고자 할 때 사용
+   ```python
+   class Unit:
+  def __init__(self, name, hp, speed):   
+    self.hp = hp
+    self.speed = speed
+
+  def move(self, location):
+    print("지상 유닛 이동")
+    print("{0} : {1} 시 방향으로 이동합니다. [속도 {2}]"\
+    .format(self.name, location, self.speed))
+
+class BuildingUnit(Unit):
+  def __init__(self, name, hp, location):
+    # Unit.__init__(self, name, hp, 0)
+    super().__init__(name, hp, 0)   # super 사용 시 self 생략
+    self.location = location
+
+# 다중 상속의 경우 먼저 생성된 클래스를 상위 클래스로 인지함.
+```
