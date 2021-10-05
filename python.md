@@ -527,3 +527,36 @@ except ZeroDivisionError as err:
 # 두 번째 숫자를 입력 : 0
 # division by zero 
 ```
+   ### 9-1. 사용자 정의 에러
+   ```python
+   class Error(Exception):   # 사용자 정의 에러
+  def __init__(self, msg):
+    self.msg = msg
+  
+  def __str__(self):
+    return self.msg
+
+try:
+  num1=int(input("첫 번째 숫자를 입력 : "))
+  num2=int(input("두 번째 숫자를 입력 : "))
+  if num1 >=10:
+    raise ValueError
+  elif num2 >=10:
+    raise Error("입력값 : {0}, {1}".format(num1, num2))
+  print("{0} / {1} = {2}".format(num1, num2, int(num1 / num2)))
+
+except ValueError:
+  print("한 자리 숫자만 입력하세요")
+
+except Error as err:
+  print(err)
+
+# 첫 번째 숫자를 입력 : 10
+# 두 번째 숫자를 입력 : 1
+# 한 자리 숫자만 입력하세요
+
+
+# 첫 번째 숫자를 입력 : 1
+# 두 번째 숫자를 입력 : 10
+# 입력값 : 1, 10
+```
