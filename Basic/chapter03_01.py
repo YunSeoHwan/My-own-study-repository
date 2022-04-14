@@ -15,11 +15,12 @@ dict : 사전
 """
 
 # 데이터 타입
+
 str1 = "Python"
 bool = True
 str2 = 'Java'
-float = 10.0
-int = 7
+float_v = 10.0
+int_v = 7
 list = [str1, str2]
 dict = {
     "name" : "Machine Learning",
@@ -33,8 +34,8 @@ set = {3, 5, 7}
 print(type(str1))           # str
 print(type(bool))           # bool
 print(type(str2))           # str
-print(type(float))          # float
-print(type(int))            # int
+print(type(float_v))          # float
+print(type(int_v))            # int
 print(type(list))           # list
 print(type(dict))           # dict
 print(type(tuple))          # tuple
@@ -123,3 +124,40 @@ print(">>>>> **")
 print("2 ** 3: ", 2 ** 3)
 print("i1 ** i2: ", i1 ** i2) 
 print("f1 ** f2: ", f1 ** f2)
+
+# 형 변환 실습
+a = 3.
+b = 6
+c = .7                  # 0.7
+d = 12.7
+
+# 타입 출력
+print(type(a))          # float
+print(type(b))          # int
+print(type(c))          # float
+print(type(d))          # float
+
+# 형 변환
+print(int(a))           # 3
+print(float(b))         # 6.0
+print(int(c))           # 0
+print(int(d))           # 12
+print(int(True))        # 1 -> True : 1, False : 0
+print(float(False))     # 0.0
+print(complex(3))       # 3+0j
+print(complex('3'))     # 3+0j -> '3' -> 3 자동 변환
+print(complex(False))   # 0j
+print()
+
+# 수치 연산 함수
+print(abs(-7))
+
+x, y = divmod(100, 8)       # 100을 8로 나눈 몫과 나머지 할당
+print(x,y)                  # 12 4 
+print(pow(5,3), 5 ** 3)     # 125 125
+
+# 외부 모듈 (다른 챕터에서 깊게 다룸)
+import math
+
+print(math.ceil(5.1))       # x 이상의 수 중 가장 작은 정수 출력 -> 6
+print(math.pi)              # 3.141592653589793
