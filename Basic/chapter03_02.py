@@ -99,3 +99,24 @@ im_str = "Good Boy!"
 print(dir(im_str))      # __iter__ 가 존재하면 시퀀스
 
 # 출력
+for i in im_str:
+    print(i)
+
+# 슬라이싱
+str_sl = 'Nice Python'
+
+# 슬라이싱 연습
+print(str_sl[0:3])                  # Nic  -> 0 1 2 인덱스 출력
+print(str_sl[5:])                   # Python
+print(str_sl[:len(str_sl)])         # Nice Python
+print(str_sl[:len(str_sl)-1])       # Nice Pytho
+print(str_sl[1:9:2])                # iePt
+print(str_sl[-5:])                  # ython
+print(str_sl[1:-2])                 # ice Pyth
+print(str_sl[::2])                  # Nc yhn
+print(str_sl[::-1])                 # nohtyP eciN
+
+# 아스키코드
+a = 'z'
+print(ord(a))           # 122 -> 아스키코드 값으로 읽음
+print(chr(122))         # z   -> 아스키코드 값을 해당 값으로 변환
