@@ -56,5 +56,41 @@ file = ['hello.py', 'ex01.py', 'intro.py']
 for i in file:
     s = i.split('.')
     print(s[0])                         # py 없애기
+print()
 
 # 11
+file = ['intra.h', 'intra.c', 'define.h', 'run.py']
+for i in file:
+    s = i.split('.')
+    if s[1] == 'h' or s[1] == 'c':
+        print(i)                        # .h, .c만 출력하기
+print()
+
+# 12
+for i in range(3, 31, 3):
+    print(i)                            # 3의 배수 출력
+print()    
+
+# 13
+for i in range(10):
+    print(i / 10)
+print()
+
+# 14
+s = 0
+for i in range(1, 11):
+    s += i
+print(s)                                # 1 ~ 10 합
+print()
+
+# 15
+s = 0
+for i in range(1, 11, 2):               # 홀수 합
+    s += i
+print(s)
+print()
+
+# 16
+price = [32100, 32150, 32000, 32500]
+for i, data in enumerate(price):
+    print(i, data)                      # index, value 출력
