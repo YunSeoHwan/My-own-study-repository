@@ -94,3 +94,29 @@ print()
 price = [32100, 32150, 32000, 32500]
 for i, data in enumerate(price):
     print(i, data)                      # index, value 출력
+print()
+
+# 17
+my_list = ['가', '나', '다', '라']
+for i in range(len(my_list) - 1):
+    print(my_list[i], my_list[i+1])
+
+# 18
+my_list = ["가", "나", "다", "라", "마"]
+for i in range(len(my_list) - 2):
+    print(my_list[i], my_list[i+1], my_list[i+2])   # 가 나 다, 나 다 라, 다 라 마
+print()
+
+# 19
+my_list = [100, 200, 400, 800]
+for i in range(len(my_list) - 1):
+    print(abs(my_list[i] - my_list[i+1]))   # n, n+1 차 출력
+print()
+
+# 20
+low_price = [100, 200, 400, 800, 1000]
+high_price = [150, 300, 430, 880, 1000]
+vol = []    # 변동폭
+for i in range(len(low_price)):
+    vol.append(abs(low_price[i] - high_price[i]))
+print(vol)
