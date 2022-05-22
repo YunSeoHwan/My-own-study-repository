@@ -120,3 +120,43 @@ vol = []    # 변동폭
 for i in range(len(low_price)):
     vol.append(abs(low_price[i] - high_price[i]))
 print(vol)
+
+# 21
+apart = [['101호', '102호'], ['201호', '202호'], ['301호', '302호']]
+for i in apart:
+    for j in i:
+        print(j)        # 101 102 201 202 301 302
+
+# 22
+stock = [["시가", 100, 200, 300], ["종가", 80, 210, 330]]
+
+# 23
+stock_dict = {'시가': [100, 200, 300], '종가': [80, 210, 330]}
+# dict으로 정의
+
+# 24
+apart = [[101, 102], [201, 202], [301, 302]]
+for i in apart[::-1]:
+    for j in i:
+        print(j)        # 301 302 201 202 101 102
+print()
+
+# 25
+apart = [[101, 102], [201, 202], [301, 302]]
+for i in apart[::-1]:
+    for j in i[::-1]:
+        print(j)        # 302 301 202 201 102 101
+print()
+
+# 26
+data = [
+    [ 2000,  3050,  2050,  1980],
+    [ 7500,  2050,  2050,  1980],
+    [15450, 15050, 15550, 14900]
+]
+result = []
+for i in data:
+    for j in i:
+        print(j * 1.00014)  # 0.0014% 곱한값 출력
+        result.append(j * 1.00014)
+print(result)       # 1차원 리스트에 저장
