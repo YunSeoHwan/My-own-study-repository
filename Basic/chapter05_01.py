@@ -61,3 +61,44 @@ def func_mul3(x):
 
 d = func_mul3(40)
 print(d, type(d))               # {'v1': 400, 'v2': 800, 'v3': 1200} <class 'dict'>
+
+# 중요
+# *args, **kwargs
+
+# *args(언팩킹), 튜플
+def args_func(*args):           # 매개변수 자유
+    for i, v in enumerate(args):
+        print('Result : {}'.format(i), v)
+    print('--------')
+
+args_func('Lee')                            # 0 Lee
+args_func('Lee', 'Park')                    # 0 Lee 1 Park
+args_func('Lee', 'Park', 'Kim')             # 0 Lee 1 Park 2 Kim
+
+# **kwargs(언팩킹), 딕셔너리
+def kwargs_func(**kwargs):
+    for v in kwargs.keys():
+        print('{}'.format(v), kwargs[v])
+    print('--------')
+
+kwargs_func(name1='Lee')                                    # name1 Lee
+kwargs_func(name1='Lee', name2='Park')                      # name1 Lee name2 Park
+kwargs_func(name1='Lee', name2='Park', name3='Yun')         # name1 Lee name2 Park name3 Yun
+
+# 전체 혼합
+def example(args_1, args_2, *args, **kwargs):
+    print(args_1, args_2, args, kwargs)
+
+example(10, 20, 'Lee', 'Park', 'Kim', age1=20, age2=30, age3=40)
+# 10 20 ('Lee', 'Park', 'Kim') {'age1': 20, 'age2': 30, 'age3': 40}
+
+# 중첩함수
+
+def nested_func(num):
+    def func_in_func(num):
+        print(num)
+    print('In func')
+    func_in_func(num + 100)
+
+nested_func(100)                    # In func 200
+# func_in_func(1000)                # 호출 불가능
