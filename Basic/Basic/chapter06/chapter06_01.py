@@ -8,7 +8,7 @@
 # 인스턴스 변수 : 객체마다 별도 존재
 
 # 예제1
-class Dog:  # object 상속
+class Dog2:  # object 상속
     # 클래스 속성
     species = 'firstdog'            # 클래스 변수
 
@@ -18,11 +18,11 @@ class Dog:  # object 상속
         self.age = age
 
 # 클래스 정보
-print(Dog)
+print(Dog2)
 
 # 인스턴스화
-a = Dog('mikky', 2)
-b = Dog('baby', 3)
+a = Dog2('mikky', 2)
+b = Dog2('baby', 3)
 # c = Dog('mikky', 2)               # a와 다른 객체
 
 # 비교
@@ -38,7 +38,7 @@ print('{} is {} and {} is {}'.format(a.name, a.age, b.name, b.age))     # mikky 
 if a.species == 'firstdog':
     print('{0} is a {1}'.format(a.name, a.species))                 # mikky is a firstdog
 
-print(Dog.species)                  # firstdog
+print(Dog2.species)                  # firstdog
 print(a.species)                    # firstdog
 print(b.species)                    # firstdog
 
@@ -89,3 +89,28 @@ print(user1.stock_num)              # 2
 
 del user1
 print(Warehouse.stock_num)          # 1
+
+# 예제4
+class Dog:  # object 상속
+    # 클래스 속성
+    species = 'firstdog'            # 클래스 변수
+
+    # 초기화/인스턴스 속성
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def info(self):
+        return '{} is {} years old'.format(self.name, self.age)
+
+    def speak(self, sound):
+        return '{} says {}!'.format(self.name, sound)
+
+# 인스턴스 생성
+c = Dog('july', 4)
+d = Dog('Marry', 10)
+# 메소드 호출
+print(c.info())                     # july is 4 years old
+# 메소드 호출
+print(c.speak('Wal Wal'))           # july says Wal Wal!
+print(d.speak('Mung Mung'))         # Marry says Mung Mung!
