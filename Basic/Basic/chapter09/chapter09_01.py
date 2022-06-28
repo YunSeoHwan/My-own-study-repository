@@ -23,3 +23,41 @@ print(cts)
 
 # 반드시 close
 f.close()
+
+# 예제2
+with open('./Basic/chapter09/resource/it_news.txt', 'r', encoding='UTF-8') as f:
+    c = f.read()
+    print(c)
+    print(iter(c))
+    print(list(c))
+    # close 자동 실행
+
+# 예제3
+# read() : 전체 읽기, read(10) : 10Byte
+
+with open('./Basic/chapter09/resource/it_news.txt', 'r', encoding='UTF-8') as f:
+    c = f.read(20)
+    print(c)                        # Right now gamers can
+    c = f.read(20)
+    print(c)                        #  pay just $1 for acc  -> 커서가 뒤로 이동
+    f.seek(0,0)                     # 첫 줄로 커서 이동
+    c = f.read(20)
+    print(c)                        # Right now gamers can
+
+# 예제4
+# readline : 한 줄 씩 읽기
+
+with open('./Basic/chapter09/resource/it_news.txt', 'r', encoding='UTF-8') as f:
+    line = f.readline()             # 한 줄 출력
+    print(line)                     # Right now gamers can pay just $1 for access to hundreds of titles across PC
+
+# 예제5
+# readlines : 전체를 읽은 후 라인 단위 리스트로 저장
+
+with open('./Basic/chapter09/resource/it_news.txt', 'r', encoding='UTF-8') as f:
+    cts  = f.readlines()
+    print(cts)
+    for c in cts:
+        print(c, end='')            # 한 줄씩 전체 출력
+
+# 파일 쓰기(write)
