@@ -63,22 +63,22 @@ with open('./Basic/chapter09/resource/it_news.txt', 'r', encoding='UTF-8') as f:
 # 파일 쓰기(write)
 
 # 예제1
-with open('./resource/contents1.txt', 'w') as f:
+with open('./Basic/chapter09/resource/contents1.txt', 'w') as f:
     f.write('I love python\n')
 
 # 예제2
-with open('./resource/contents1.txt', 'a') as f:
+with open('./Basic/chapter09/resource/contents1.txt', 'a') as f:
     f.write('I love python2\n')
     
     
 # 예제3
 # writelines : 리스트 -> 파일
-with open('./resource/contents2.txt', 'w') as f:
+with open('./Basic/chapter09/resource/contents2.txt', 'w') as f:
     list = ['Orange\n', 'Apple\n', 'Banana\n', 'Melon\n']
     f.writelines(list)
     
 # 예제4
-with open('./resource/contents3.txt', 'w') as f:
+with open('./Basic/chapter09/resource/contents3.txt', 'w') as f:
     print('Test Text Write!', file=f)
     print('Test Text Write!', file=f)
     print('Test Text Write!', file=f)
