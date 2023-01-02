@@ -18,7 +18,25 @@ for i in range(m):
     graph[u].append(v)
     graph[v].append(u)
 
-# DFS
+# DFS Stack
+def dfs_stack(v):
+
+    # stack에 삽입
+    stack = [v]
+
+    # stack이 empty일때까지
+    while stack:
+
+        # 가장 최근 요소 pop
+        v = stack.pop()
+
+        # 방문하지 않았다면 방문처리하고 연결 노드 stack에 삽입
+        if visited[v] == 0:
+            visited[v] = 1
+            for i in graph[v]:
+                stack.append(i)
+
+# DFS 재귀
 def dfs(v):
 
     # 방문처리
@@ -32,6 +50,6 @@ def dfs(v):
 # 방문하지 않은 노드만 cnt + 1    
 for i in range(1, n+1):
     if visited[i] == 0:
-        dfs(i)
+        dfs_stack(i)
         cnt+=1
 print(cnt)
