@@ -24,5 +24,4 @@ for i in range(1, n):
     if end <= meet[i][0]:
         end = meet[i][1]
         cnt+=1
-        
 print(cnt)
