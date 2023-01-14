@@ -4,8 +4,13 @@ input = sys.stdin.readline
 sys.setrecursionlimit(10000)
 n = int(input())
 
+# 행렬
 matrix = [list(map(int, input().split())) for _ in range(n)]
+
+# 종이 개수
 cnt = []
+
+# 분할정복
 def divide(x, y, n):
     color = matrix[x][y]
 
