@@ -5,8 +5,6 @@ input = sys.stdin.readline
 n, m = map(int, input().split())
 matrix = [list(map(int, input().strip())) for _ in range(n)]
 
-visit = [[False] * m for _ in range(n)]
-
 # 상하좌우
 dx, dy = [0, 0, 1, -1], [1, -1, 0, 0]
 
